@@ -1,0 +1,143 @@
+
+
+REACT - React is a javascript librery which is used to create user interface
+-----------------------------------------------------------------------------
+React application : which is a collection of components
+React components :reusablecode for creating UI of application
+-----------------------------------------------------------------------------
+
+=> features
+   --------
+virtual DOM - no page loading delay
+User interface component
+Jsx : language used to dispaly content (same as html)
+-----------------------------------------------------------------------------
+
+=> Project creatioon
+   -----------------
+vite - which method reduce page loading
+project creation - npm create vite@latest project-name -- -- Template
+To Run - npm run dev
+
+------------------------------------------------------------------------------
+
+=> To create component in Js
+   -------------------------
+The extention must be .jsx
+The file name must start with capital letter
+ 
+- Two type of commponent creation method :
+ ~ Function based component : js pure function, which return jsx function name and file name must same (stateless component)
+ ~ class based component : which use js class (statefull component)
+
+------------------------------------------------------------------------------
+
+=> styling of react componrnt (styling of app.jsx )
+   ------------------------------------------------
+
+- inline css : 
+    syntax : style={{property:value}} 
+
+- external css :
+    syntax : external file App.css to style the app.jsx component
+
+- css module file : external css file 
+
+----------------------------------------------------------------------------------
+
+Files and folder structure of react app using vite
+
+=> folder in vs code : 
+
+   - package.json : cofiguration file for project
+   - node_modules : the copy of external packages stored ,  the external files are from internet so the copy stored to get the files  without internet so the project works without internet
+   - vite.config.js : configuration file or react app  
+   - README.md : project documentation file
+   - package-lock-json : mention the detail version of packages installed in project
+   - .gitignore : files or folders to be ignored in gitignore
+   - eslint.config.js : js code quality check
+   - index.html : entry point of application
+      command : nmp installed
+
+--------------------------------------------------------------------------------
+
+=> main.jsx : decide which content show in the dom which create roots
+   - src folder : react logic
+   - createRoot() : create a root to display react components inside a browser
+      -> react application is collection of components 
+         - which is an tree structure the root is <app/> means the components are in app folder
+         index.css : global css folder
+         app.jsx : Root of the application
+         app.css : css file for jsx
+         asset folder : used to hold videos images ... etc for the file
+         
+---------------------------------------------------------------------------------
+
+=> To get table value use map functions
+   products.map(item => (bodey contents))
+   products.map(item => {js code})
+
+=> conditional Rendering : To use js turnery operators or conditional statements(if,else...)
+
+=> Event Handling react (button method) 
+- function call without argument : event=(function-name)
+- function with arguments : event={()=>function-name(arguments)}
+- function call with argument as event : event-{(event)=>function-name(event)}
+
+----------------------------------------------------------------------------------
+
+   State
+   -----
+Babel - jsx convert into html(the output in webpage)
+State - variable used to store data
+ - when state will changes then DOM also will changed
+
+ - class based component : statefull component
+   => rcc - react class based component structure
+
+ - functional components cant create the state so its called as stateless component
+   => react Hooks :function giving react component features to functional component
+      - follow the Rules
+        :- use this on the top of the component
+        :- cant create the hooks in conditional statements
+
+=> Pre Defined Hooks
+   - useState (initial-value) :used to create the state in functional component,it can store any type of data , which returns array
+     1st argument gives state ,2nd will function name
+
+ ------------------------------------------------------------------------------------
+
+   Props - used to share data from parent to child
+   -----
+- it is an argument of functional component
+- props is an object [key,child selector]
+
+
+this is from app.jsx(example)
+
+const parentData = "DATA FROM PARENT"
+function App(){
+  return(
+    <div>
+      <Car/>
+      <Display/>
+      <Home data={parentData} />    // chaild selector - home , property - data
+      <Colour/>
+    </div>
+  )
+}
+
+parent - app
+childs - <car/>, <cDisplay/>.....
+
+const parentData = "DATA FROM PARENT"
+<Home data={parentData} /> if home need the parentData then assign to it
+->in <home/> use {data} to get the value as an object like  data: "DATA FROM PARENT" // key : value
+
+--------------------------------------------------------------------------------------
+project
+
+project creation - npm create vite@latest project-name -- -- Template react -to create project folder
+An IDE is a software that helps programmers write, run, and fix code easily in one place. eg :vs code
+
+css selectors (id,class..) - to select html element to css for design
