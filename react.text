@@ -137,7 +137,35 @@ const parentData = "DATA FROM PARENT"
 --------------------------------------------------------------------------------------
 project
 
-project creation - npm create vite@latest project-name -- -- Template react -to create project folder
+1. project creation using vite - npm create vite@latest project-name -- -- Template react -to create project folder
+
+2. remove unwanted codes
+
+3. install or link libraries used to create react project(bootstrap,fontstyle,material ui,react-router-dom,react icons)
+
+4. create page folder inside src folder, create components for pages inside folder
+
+5.create components folder inside src, component for part of pages 
+
+6.Router : when you click a link, the browser reloads a new page.
+   - To check router installed or not : open the packages.json->dependencies->"react-router-dom": "^7.9.4"then it is intalled 
+   - If not intalled then run the code on terminal : npm i react-router-dom
+
+6. setup path for components in pages folder(import)
+   - in main.jsx link the app.jsx like this
+
+    <StrictMode>
+    <BrowserRouter><App /></BrowserRouter>
+  </StrictMode>,
+
+  - next import the pages in app.jsx, now we can see the pages in website
+
+7. if we click link page will reload to avoid reloding uset the import statements : import { Link } from 'react-router-dom';
+
+8. 
+
+-------------------------------------------------------------------------------------------------
+
 An IDE is a software that helps programmers write, run, and fix code easily in one place. eg :vs code
 
 css selectors (id,class..) - to select html element to css for design
