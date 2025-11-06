@@ -6,8 +6,8 @@ React application : which is a collection of components
 React components :reusablecode for creating UI of application
 -----------------------------------------------------------------------------
 
-=> features
-   --------
+=> features of react
+   ----------------
 virtual DOM - no page loading delay
 User interface component
 Jsx : language used to dispaly content (same as html)
@@ -150,6 +150,7 @@ project
 6.Router : when you click a link, the browser reloads a new page.
    - To check router installed or not : open the packages.json->dependencies->"react-router-dom": "^7.9.4"then it is intalled 
    - If not intalled then run the code on terminal : npm i react-router-dom
+    => useNavigate : page to page redirection
 
 6. setup path for components in pages folder(import)
    - in main.jsx link the app.jsx like this
@@ -166,6 +167,16 @@ project
 
 -------------------------------------------------------------------------------------------------
 
-An IDE is a software that helps programmers write, run, and fix code easily in one place. eg :vs code
+How Api Call Works
 
-css selectors (id,class..) - to select html element to css for design
+-> User fills the form → updates resumeDetails state.
+
+-> User clicks Finish → handleAddResume() is called.
+
+-> Form validation ensures all fields are filled.
+
+-> addResumeAPI sends the data to the server using commonAPI.
+
+-> On success (status 201) → shows alert and navigates to /resume/{id}/view.
+
+-> On failure - shows alert and logs error.
