@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { TextField } from '@mui/material';
 import { FaXmark } from "react-icons/fa6";
+import { updateResumeAPI } from '../services/allAPI';
 
 const style = {
   position: 'absolute',
@@ -39,6 +40,26 @@ function Edit({resumeDetails,setResumeDetails}) {
   } 
   const removeSkill = (skill)=>{
     setResumeDetails({...resumeDetails,userSkills:resumeDetails.userSkills.filter(item=>item!=skill)})
+  }
+
+  const handleResumeUpdate = async()=>{
+      const {id,username, jobTitle, location } = resumeDetails;
+      if(!username&& !jobTitle&& !location){
+        alert("please filll the form completely....")
+      }else{
+        //api
+        console.log("API called");
+        try {
+          const result = await updateResumeAPI(id,resumeDetails)
+          console.log(result);
+          if(result.status==200)
+          alert('Resume Updated successfully!!!')
+          handleClose()
+        } catch (err) {
+          console.log(err);
+          
+        }
+      }
   }
 
   return (
@@ -123,7 +144,7 @@ function Edit({resumeDetails,setResumeDetails}) {
                 </div>
             </div>
             {/* Button */}
-            <div className="btn btn-warning text-light">update</div>
+            <div onClick={handleResumeUpdate} className="btn btn-warning text-light">update</div>
           </Box>
         </Box>
       </Modal>
