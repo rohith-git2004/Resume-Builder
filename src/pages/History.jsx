@@ -13,9 +13,12 @@ function History() {
   useEffect(()=>{
     getHistory()
   },[])
+
   const getHistory = async ()=>{
   try {
     const result = await getHistoryAPI()
+    // console.log(result);
+    
     if (result.status==200){
       setAllHistory(result.data)
     }
@@ -46,11 +49,11 @@ function History() {
                 <div key={item?.id} className="col-md-4">
                 <Paper elevation={3} sx={{my:5,p:5,textAlign:'center'}}>
                   <div className="d-flex justify-content-between align-items-center">
-                    <h6>Review At: {item?.timeStamp}, 9:28:21 AM</h6>
+                    <h6>Review At: {item?.timeStamp}</h6>
                     <button onClick={()=>deleteHistory(item?.id)} className='btn text-danger fs-5'><MdDeleteForever /></button>
                   </div>
                   <div className="border rounded p-3">
-                    <img className='img-fluid' width={'200px'} height={'200px'} src={item?.resumeImg} alt="" />
+                    <img className='img-fluid' width={'200px'} height={'200px'} src={item?.resumeImg} alt="resume" />
                   </div>
                 </Paper>
               </div>
